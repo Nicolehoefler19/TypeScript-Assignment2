@@ -230,79 +230,78 @@ function changetheme(){
 }
 
 
-//document.getElementById("bestellung")!.addEventListener('click', x);
+document.getElementById("bestellung")?.addEventListener('click', validator);
 
-// function validator(){
-//     console.log("validator geht");
-//     var orderButton = document.getElementById("bestellung") as HTMLInputElement;
-//     var textArea = document.getElementById("ajaxArea") as HTMLElement;
-//     var img1 = document.getElementById("img1") as HTMLElement;
-//     var img2 = document.getElementById("img2") as HTMLElement;
-//     var gamebutton = document.getElementById("gamebutton") as HTMLInputElement;
-//     var clicked : number;
-//     clicked = 0;
+function validator(){
+    console.log("validator geht");
+    var orderButton = document.getElementById("bestellung") as HTMLInputElement;
+    var textArea = document.getElementById("ajaxArea") as HTMLElement;
+    var img1 = document.getElementById("img1") as HTMLElement;
+    var img2 = document.getElementById("img2") as HTMLElement;
+    var clicked : number;
+    clicked = 0;
 
 
-//     textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
+    textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
 //     img1.style.backgroundImage = "url(./dog.gif)";
 //     img2.style.backgroundImage = "url(./crazy.gif)";
-//     gamebutton.style.textAlign = "center";
-//     gamebutton.style.background = "cyan";
-//     gamebutton.style.borderRadius = "5px";
+    var gamebutton = document.getElementById("gamebutton") as HTMLInputElement;
+    gamebutton.style.textAlign = "center";
+    gamebutton.style.background = "cyan";
+    gamebutton.style.borderRadius = "5px";
 
-//     gamebutton?.addEventListener("click", winorNot);
+    gamebutton?.addEventListener("click", winorNot);
 
-//     function winorNot(){
-//         if(clicked < 1){
-//             clicked++;
-//             var numberRow : Array<Number>
-//             var i : number;
-//             var won : void;
+    function winorNot(){
+        if(clicked < 1){
+            clicked++;
+            var numberRow : Array<Number>
+            var i : number;
+            var won : void;
 
-//             numberRow = new Array;
+            numberRow = new Array;
 
-//             numberRow[0] = 1;
-//             numberRow[1] = 2;
-//             numberRow[2] = 3;
-//             numberRow[3] = 4;
-//             numberRow[4] = 5;
-//             numberRow[5] = 6;
+            numberRow[0] = 1;
+            numberRow[1] = 2;
+            numberRow[2] = 3;
+            numberRow[3] = 4;
+            numberRow[4] = 5;
+            numberRow[5] = 6;
 // //ändern
-//             i = Math.floor(Math.random() * 6) + 1;
+            i = Math.floor(Math.random() * 5) + 1;
 
-//             var chanceToWin = new Promise ((resolve, reject) =>{
-//                 if(numberRow[i] > 2){
-//                     var newTicketPrice : number;
+            var chanceToWin = new Promise ((resolve, reject) =>{
+               if(numberRow[i] > 2){
+                    var newTicketPrice : number;
 //                     newTicketPrice = ticketPrice/2;
 //                     ticketPrice = newTicketPrice;
-//                     textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
-//                     won = alert("Congratulation. You've won. Look at the Price. It's now 50% off.");
-
-//                     console.log("The number is: " + numberRow[i]);
+                    textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
+                    console.log("The number is: " + numberRow[i]);
+                    won = alert("Congratulation. You've won. Look at the Price. It's now 50% off.");
           
-//                     resolve(won);
-//                 }
-//                 else{
-//                     let reason : any;
+                    resolve(won);
+                }
+                else{
+                    let reason : any;
 
-//                     textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
-//                     won = alert("Sorry You've lost");
-//                     console.log("The number is: " + numberRow[i])
-//                     reject(reason);
-//                 }
-//             });
-//         var runGame : any;
-//         runGame = function(){
-//             chanceToWin.then(function(fulfilled: any){
-//                 alert(fulfilled);
-//             })
-//             .catch(function(error: any){
-//                 alert(error.message);
-//             });
-//         }
-//         runGame();
-//         }
-//         gamebutton.disabled = true;
-//     }
-// }
+                    textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
+                    console.log("The number is: " + numberRow[i]);
+                    won = alert("Sorry You've lost");
+                    reject(reason);
+                }
+            });
+        var runGame : any;
+        runGame = function(){
+            chanceToWin.then(function(fulfilled: any){
+                alert(fulfilled);
+            })
+            .catch(function(error: any){
+                alert(error.message);
+            });
+        }
+        runGame();
+        }
+        gamebutton.disabled = true;
+     }
+ }
  
