@@ -10,13 +10,14 @@ var localStorage : Storage;
 //Umgeschriebener JavaScript Code der Vorlage Movie-Seat-Booking
 populateUI();
 
-// function changeTicketPrice(){
-// let ticketPrice: number;
-// let x : number = Number(movieSelect.value);
-// ticketPrice = +x;
-// }
+let ticketPrice: number;
 
-// changeTicketPrice();
+function changeTicketPrice(){
+let x : number = Number(movieSelect.value);
+ticketPrice = +x;
+}
+
+changeTicketPrice();
 
 //Save selected movie index and price
 function setMovieData(movieIndex: string, moviePrice: string){ 
@@ -34,7 +35,7 @@ function updateSelectedCount(){
     const selectedSeatsCount : number = selectedSeats.length;
 
     count.innerText = selectedSeatsCount;
-    //total.innerText = selectedSeatsCount * ticketPrice;
+    total.innerText = selectedSeatsCount * ticketPrice;
 }
 
 //Get Data from Localstorage and populate UI
@@ -62,7 +63,7 @@ function populateUI() {
 container?.addEventListener('change', (e: Event) => {
       const el = e.target as HTMLSelectElement;
       let y : any = Number(el.value);
-//      ticketPrice = +y;
+      ticketPrice = +y;
       var elSelectedIndex = String(el.selectedIndex);
       setMovieData(elSelectedIndex, el.value);
       updateSelectedCount();
@@ -313,7 +314,6 @@ function validator(){
      function getImg(){
         var img2 = document.getElementById("img2") as HTMLElement;
         img2.style.backgroundImage = "url(./crazy.gif)";
-
 
      }
  }
