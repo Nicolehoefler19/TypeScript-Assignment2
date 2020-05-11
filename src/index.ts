@@ -1,13 +1,14 @@
-// const container = document.querySelector('.container') as HTMLInputElement;
-// const seats = document.querySelectorAll('.row .seat:not(.occupied)') as  NodeListOf<HTMLElement>;
-// const count : HTMLElement | any = document.getElementById('count');
-// const total : HTMLElement | any = document.getElementById('total');
+const container = document.querySelector('.container') as HTMLInputElement;
+const seats = document.querySelectorAll('.row .seat:not(.occupied)') as  NodeListOf<HTMLElement>;
+const count : HTMLElement | any = document.getElementById('count');
+const total : HTMLElement | any = document.getElementById('total');
 var area : HTMLElement | any = document.getElementById('test') as HTMLElement;
 
-// const movieSelect = document.getElementById('movie') as HTMLSelectElement;
-// var localStorage : Storage;
+const movieSelect = document.getElementById('movie') as HTMLSelectElement;
+var localStorage : Storage;
 
-// populateUI();
+//Umgeschriebener JavaScript Code der Vorlage Movie-Seat-Booking
+populateUI();
 
 // function changeTicketPrice(){
 // let ticketPrice: number;
@@ -17,72 +18,72 @@ var area : HTMLElement | any = document.getElementById('test') as HTMLElement;
 
 // changeTicketPrice();
 
-// //Save selected movie index and price
-// function setMovieData(movieIndex: string, moviePrice: string){ 
-//     localStorage.setItem('selectedMovieIndex', movieIndex);
-//     localStorage.setItem('selectedMoviePrice', moviePrice);
-// }
+//Save selected movie index and price
+function setMovieData(movieIndex: string, moviePrice: string){ 
+    localStorage.setItem('selectedMovieIndex', movieIndex);
+    localStorage.setItem('selectedMoviePrice', moviePrice);
+}
 
-// function updateSelectedCount(){
-//     const selectedSeats = document.querySelectorAll('.row .seat.selected') as NodeListOf<HTMLElement>;
-//     // Kake const seatsIndex;
-//     const seatsIndex : any = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+function updateSelectedCount(){
+    const selectedSeats = document.querySelectorAll('.row .seat.selected') as NodeListOf<HTMLElement>;
 
-//     localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
+    const seatsIndex : any = [...selectedSeats].map(seat => [...seats].indexOf(seat));
 
-//     const selectedSeatsCount : number = selectedSeats.length;
+    localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
 
-//     count.innerText = selectedSeatsCount;
-//     total.innerText = selectedSeatsCount * ticketPrice;
-// }
+    const selectedSeatsCount : number = selectedSeats.length;
 
-// //Get Data from Localstorage and populate UI
-// function populateUI() {
+    count.innerText = selectedSeatsCount;
+    //total.innerText = selectedSeatsCount * ticketPrice;
+}
+
+//Get Data from Localstorage and populate UI
+function populateUI() {
     
-//     const selectedSeats: number[] | null = JSON.parse(localStorage.getItem('selectedSeats') || '{}');
+    const selectedSeats: number[] | null = JSON.parse(localStorage.getItem('selectedSeats') || '{}');
 
-//     if (selectedSeats !== null && selectedSeats.length > 0){
-//         seats.forEach((seat: Element, index: number) => {
-//             if (selectedSeats.indexOf(index) > -1){
-//                 seat.classList.add('selected');
-//             }
-//         });
-//     }
+    if (selectedSeats !== null && selectedSeats.length > 0){
+        seats.forEach((seat: Element, index: number) => {
+            if (selectedSeats.indexOf(index) > -1){
+                seat.classList.add('selected');
+            }
+        });
+    }
 
-//     const selectedMovieIndex : number = Number(localStorage.getItem('selectedMovieIndex'));
+    const selectedMovieIndex : number = Number(localStorage.getItem('selectedMovieIndex'));
 
-//     if (selectedMovieIndex !== null) {
-//         movieSelect.selectedIndex = selectedMovieIndex;
-//       }
-// }
+    if (selectedMovieIndex !== null) {
+        movieSelect.selectedIndex = selectedMovieIndex;
+      }
+}
 
-// //Movie select event
+//Movie select event
 
-// container?.addEventListener('change', (e: Event) => {
-//       const el = e.target as HTMLSelectElement;
-//       let y : any = Number(el.value);
-//       ticketPrice = +y;
-//       var elSelectedIndex = String(el.selectedIndex);
-//       setMovieData(elSelectedIndex, el.value);
-//       updateSelectedCount();
-//   });
+container?.addEventListener('change', (e: Event) => {
+      const el = e.target as HTMLSelectElement;
+      let y : any = Number(el.value);
+//      ticketPrice = +y;
+      var elSelectedIndex = String(el.selectedIndex);
+      setMovieData(elSelectedIndex, el.value);
+      updateSelectedCount();
+  });
  
 // //Seat Click event
 
 
-// container?.addEventListener('click', (e: Event) => {
-//     const el = e.target as HTMLElement;
-//     if (
-//         el.classList.contains('seat') &&
-//         !el.classList.contains('occupied')
-//       ) {
-//         el.classList.toggle('selected');
-//         updateSelectedCount();
-//       }
-//     });
+container?.addEventListener('click', (e: Event) => {
+    const el = e.target as HTMLElement;
+    if (
+        el.classList.contains('seat') &&
+        !el.classList.contains('occupied')
+      ) {
+        el.classList.toggle('selected');
+        updateSelectedCount();
+      }
+    });
     
-//     // Initial count and total set
-//     updateSelectedCount();
+    // Initial count and total set
+    updateSelectedCount();
 
 //My Code
 
@@ -120,7 +121,7 @@ function changetheme(){
             let movie = document.getElementById("movie") as HTMLElement;
             let button = document.getElementById("bestellung") as HTMLElement;
             
-//             screen.style.backgroundImage = "url(./avengers_screen.gif)";
+            screen.style.backgroundImage = "url(./avengers_screen.gif)";
             movie.style.color = "black";
             movie.style.background = "purple";
             button.style.color = "black";
@@ -185,7 +186,7 @@ function changetheme(){
             let movie : HTMLElement = document.getElementById("movie") as HTMLElement;
             let button : HTMLElement = document.getElementById("bestellung") as HTMLElement;
             
-            //screen.style.backgroundImage = "url(./ts4.gif)";
+            screen.style.backgroundImage = "url(./ts4.gif)";
             movie.style.color = "white";
             movie.style.background = "red";
             button.style.color = "white";
@@ -216,7 +217,7 @@ function changetheme(){
             let movie = document.getElementById("movie") as HTMLElement;
             let button = document.getElementById("bestellung") as HTMLElement;
             
-//             screen.style.backgroundImage = "url(./lion.gif)";
+            screen.style.backgroundImage = "url(./lion.gif)";
             movie.style.color = "black";
             movie.style.background = "orange";
             button.style.color = "black";
@@ -243,8 +244,8 @@ function validator(){
 
 
     textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
-//     img1.style.backgroundImage = "url(./dog.gif)";
-//     img2.style.backgroundImage = "url(./crazy.gif)";
+    img1.style.backgroundImage = "url(./dog.gif)";
+    img2.style.backgroundImage = "url(./crazy.gif)";
     var gamebutton = document.getElementById("gamebutton") as HTMLInputElement;
     gamebutton.style.textAlign = "center";
     gamebutton.style.background = "cyan";
@@ -267,7 +268,7 @@ function validator(){
             numberRow[3] = 4;
             numberRow[4] = 5;
             numberRow[5] = 6;
-// //ändern
+
             i = Math.floor(Math.random() * 5) + 1;
 
             var chanceToWin = new Promise ((resolve, reject) =>{
