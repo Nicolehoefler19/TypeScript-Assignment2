@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jquery": "^3.3.38",
     "node.js": "0.0.1-security",
     "nodejs": "0.0.0",
     "rollup": "^2.1.0",

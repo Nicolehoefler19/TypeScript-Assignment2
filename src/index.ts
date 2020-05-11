@@ -230,19 +230,23 @@ function changetheme(){
     }
 }
 
+$(document).ready(function(){
+    $("button").click(function(){
+      $("form").toggleClass("show");
+    });
+});
 
 document.getElementById("bestellung")?.addEventListener('click', validator);
 
 function validator(){
     console.log("validator geht");
+
     var orderButton = document.getElementById("bestellung") as HTMLInputElement;
     var textArea = document.getElementById("ajaxArea") as HTMLElement;
     var img1 = document.getElementById("img1") as HTMLElement;
-    var img2 = document.getElementById("img2") as HTMLElement;
     var clicked : number;
     clicked = 0;
     img1.style.backgroundImage = "url(./dog.gif)";
-    img2.style.backgroundImage = "url(./crazy.gif)";
 
     textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
     var gamebutton = document.getElementById("gamebutton") as HTMLInputElement;
@@ -302,6 +306,15 @@ function validator(){
         runGame();
         }
         gamebutton.disabled = true;
+     }
+
+     document.getElementById("ok")?.addEventListener('click', getImg);
+
+     function getImg(){
+        var img2 = document.getElementById("img2") as HTMLElement;
+        img2.style.backgroundImage = "url(./crazy.gif)";
+
+
      }
  }
  
