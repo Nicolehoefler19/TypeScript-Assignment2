@@ -241,11 +241,10 @@ function validator(){
     var img2 = document.getElementById("img2") as HTMLElement;
     var clicked : number;
     clicked = 0;
-
-
-    textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
     img1.style.backgroundImage = "url(./dog.gif)";
     img2.style.backgroundImage = "url(./crazy.gif)";
+
+    textArea.innerHTML += '<button id="gamebutton">Klick me for a chance to get 50% off</button>';
     var gamebutton = document.getElementById("gamebutton") as HTMLInputElement;
     gamebutton.style.textAlign = "center";
     gamebutton.style.background = "cyan";

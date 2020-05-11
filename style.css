@@ -156,7 +156,7 @@ p.text span {
   visibility: visible;
 }
 
-/* #img1{
+#img1{
   width: 400px;
   height: 400px;
   position: absolute;
@@ -178,4 +178,4 @@ p.text span {
   -webkit-animation:linear infinite alternate;
   -webkit-animation-name: run;
   -webkit-animation-duration: 5s;
-} */
+}
